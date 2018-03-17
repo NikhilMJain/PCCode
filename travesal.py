@@ -47,7 +47,7 @@ def postorder():
     while s2:
         print s2.pop().info
 
-
+#create
 head = Node('A')
 B = Node('B')
 C = Node('C')
