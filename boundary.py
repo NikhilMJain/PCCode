@@ -14,7 +14,6 @@ one.l = two
 one.r = four
 two.l = three
 two.r = five
-
 def boundary(root):
     if root:
         print root.info
