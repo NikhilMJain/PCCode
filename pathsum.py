@@ -23,6 +23,14 @@ def sumpath(root, s):
     if root is None:
         return s == 0
     return sumpath(root.l, s - root.info) or sumpath(root.r, s - root.info)
+c = 0
+def countleaves(root):
+    global c
+    if root:
+        countleaves(root.l)
+        if root.l is None and root.r is None:
+            c = c + 1
+        countleaves(root.r)
 
 def height(root):
     if not root:
@@ -44,5 +52,7 @@ def diameter(root):
 # print sumpath(head, 8)
 # print sumpath(head, 9)
 # print sumpath(head, 10)
-
+print c
 print diameter(head)
+countleaves(head)
+print c
