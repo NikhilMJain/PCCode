@@ -37,6 +37,20 @@ def insertbst(root):
                     break
                 else:
                     q = q.r
+    return root
+
+
+key = 41
+def search(root):
+    if root:
+        if key == root.info:
+            return root
+        elif key < root.info:
+            return search(root.l)
+        else:
+            return search(root.r)
     
 
-insertbst(None)
+root = insertbst(None)
+if __name__ == '__main__':
+    print search(root)
