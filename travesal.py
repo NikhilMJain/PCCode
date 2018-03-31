@@ -4,7 +4,46 @@ class Node():
         self.info = item
         self.r = self.l = None
 
-head = None
+class Node():
+    def __init__(self, info = None):
+        self.info = info
+        self.l = self.r = None
+s = []
+s1 = []
+
+head = one = Node(1)
+two = Node(2)
+three= Node(3)
+four = Node(4)
+five = Node(5)
+six = Node(6)
+seven = Node(7)
+ten = Node(10)
+nine = Node(9)
+
+ten.l = nine
+ten.r = one
+nine.l = seven
+nine.r = two
+one.l = four
+one.r = three
+
+
+def level(root):
+    width = 1
+
+    s.append(root)
+    while(s):
+        width = max(width, len(s))
+        cur = s.pop(0)
+        
+        if cur.l:
+            s.append(cur.l) 
+        if cur.r:
+            s.append(cur.r)
+    return width
+
+
 
 def preorder():
     global head
@@ -58,5 +97,6 @@ head.r = C
 C.l = D
 C.r = E
 
-postorder()
+print level(ten)
+
 

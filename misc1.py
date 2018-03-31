@@ -29,4 +29,22 @@ def leafsum(root, key):
     
     return leafsum(root.l, key - root.info) or leafsum(root.r, key - root.info)
 
-print leafsum(ten, 22)
+def getlevel(root, target, level):
+    if root:
+        if root.info == target:
+            return level
+        x = getlevel(root.l, target, level + 1)
+        if x != 0:
+            return x
+        else:
+            return getlevel(root.r, target, level + 1)
+    return 0
+print getlevel(ten, 10,1)
+print getlevel(ten, 1,1)
+print getlevel(ten, 7,1)
+print getlevel(ten, 2,1)
+print getlevel(ten, 3,1)
+    
+
+#print leafsum(ten, 22)
+
