@@ -10,13 +10,15 @@
 #     j -= 1
 # print(a)
 
-a = [1,2,2,3]
+a = [-7]
 res = 0
 c = 0
 for i in a:
     res = res + i
 for i in range(len(a)):
-    c = c + a[i]
+    
     res = res - a[i]
+    
     if c == res:
         print(i)
+    c = c + a[i]
