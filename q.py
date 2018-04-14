@@ -25,11 +25,12 @@ def Col_Clash(c):
 
 def Diag_Clash(r, c):
     for i in range(c, -1, -1):
-        if (r - i) < 0 or (c - i) < 0 or grid[r - i][c - i] == 1:
+        if grid[r - i][c - i] == 1:
             return False
     for i in range(c, -1, -1):
-        if (r + i) >= N or (c - i) < 0 or grid[r + i][c - i] == 1:
-            return False
+        if i < N:
+            if grid[r + i][c - i] == 1:
+                return False
     return True
 
 
@@ -44,6 +45,8 @@ def Q(c):
     for i in range(N):
         if Is_Safe(i, c):
             grid[i][c] = 1
+            for j in grid:
+                print(j)
 
             if Q(c + 1):
                 return True
