@@ -30,15 +30,38 @@ def anc(root, key, s ):
         if anc(root.l, key,s) or anc(root.r, key,s):
             s.append(root.info)
             return True
+p = 4
+q = 7
+anc(ten, p, s)
+anc(ten, q, s1)
 
-anc(ten, 4, s)
-anc(ten, 9, s1)
-
-print (s, s1)
 
 for i in s:
     if i in s1:
         x = i
         break
 
-print (abs(s.index(x) - s1.index(x)) + 2 if i in s1 and i in s else abs(s.index(x) - s1.index(x)))
+print(abs(s1.index(x) - s.index(x)) if x == p or x == q else abs(s1.index(x) - s.index(x)) + 2)
+print (s, s1)
+#
+
+#efficient one for lca
+
+def lca(root, p, q):
+    if root:
+        if root.info == p or root.info == q:
+            print('first'+str(root.info))
+            return root
+        lc = lca(root.l, p, q)
+        rc = lca(root.r, p, q)
+
+        if (lc and rc):
+            print('second'+str(root.info))
+            return root
+        elif lc:
+            return lc
+        else:
+            return rc
+
+lc = lca(ten, 9, 111).info
+
