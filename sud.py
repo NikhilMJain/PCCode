@@ -74,6 +74,7 @@ def Sudoku():
     rr = r
     cc = c
     for i in range(1, 10):
+        count += 1
         if Is_Safe(rr, cc, i):
             grid[rr][cc] = i
 
@@ -90,3 +91,4 @@ print(time.time() - x)
 for i in grid:
     print(i)
 
+print count
