@@ -13,4 +13,4 @@ while m <= h:
     elif a[m] == 2:
         a[m], a[h] = a[h], a[m]
         h = h - 1
-print a
+print(a)
