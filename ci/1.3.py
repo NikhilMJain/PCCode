@@ -1,4 +1,4 @@
-s = ''
+s = 'abccb5'
 
 s = list(s)
 l = len(s)
