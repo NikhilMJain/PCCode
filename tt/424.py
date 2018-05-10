@@ -67,7 +67,7 @@ while i < l - 1:
     while i < (l - 1) and a[i] == a[i + 1]:
         i += 1
         c += 1
-    print (str(a[i]) + str(c)
+    print (str(a[i]) + str(c))
     i += 1
 
 

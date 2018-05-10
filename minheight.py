@@ -26,7 +26,14 @@ def height(root, l):
         height(root.l, l + 1)
         height(root.r, l + 1)
 
+
+def newh(root):
+    if root.l is None and root.r is None:
+        return 0
+    return 1 + min(newh(root.l) , newh(root.r))
 print(m)
 height(root, 0)
 print(m)
+print()
 
+print(newh(root))

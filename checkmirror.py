@@ -33,6 +33,6 @@ newone.l = newfour
 newone.r = newtwo
 newtwo.l = newfive
 newtwo.r = newthree
-#newthree.l = Node(44)
+newthree.l = Node(44)
 
 print checkMirror(one, newone)
