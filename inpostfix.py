@@ -15,14 +15,15 @@ def ptoi(ex):
     print(s.pop())
 
 #ptoi('abcd-*e/+')
-
+#abcd^e-fgh*+^*+i-
 def prec(op):
     if op == '+' or op == '-':
         return 1
     elif op == '/' or op == '*':
         return 2
     elif op == '^':
-        return 3    
+        return 3
+    return 0  
 
 def itop(ex):
     for i in ex:
@@ -30,15 +31,17 @@ def itop(ex):
             s.append(i)
         elif i == ')':
             while s[-1] != '(':
-                print(s.pop())
+                print(s.pop(),end='')
             s.pop()
         elif isOp(i):
-            print('{}'.format(i))
+            print('{}'.format(i),end='')
         else:
             while s and prec(i) <= prec(s[-1]):
-                print(''.format(s.pop()))
+                print('{}'.format(s.pop()),end='')
             s.append(i)
     while s:
-        print('{}'.format(s.pop()))
+        print('{}'.format(s.pop()),end='')
 
-itop('a+(b*c)')
+itop('a+b*(c^d-e)^(f+g*h)-i')
+
+#ptoi('11-2/35+*')
