@@ -42,6 +42,6 @@ def itop(ex):
     while s:
         print('{}'.format(s.pop()),end='')
 
-itop('a+b*(c^d-e)^(f+g*h)-i')
-
+itop(')a-b/c(*)a/k-l('[::-1])
+#prefix
 #ptoi('11-2/35+*')
