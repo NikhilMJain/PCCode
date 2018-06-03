@@ -18,4 +18,26 @@
 #     def convertToHeap(self, l):
 #         for i in range()
 
+import heapq
 
+minh = []
+maxh = []
+
+a = [1,6,3,2,5,7,4]
+
+for i in a:
+    heapq.heappush(maxh, -i)
+    heapq.heappush(minh, i)
+
+print(minh)
+print(maxh)
+
+for i in a:
+    
+    print((heapq.heappop(minh), -heapq.heappop(maxh)))
+
+
+    # if len(maxh) % 2 == 0:
+    #     heapq.heappush(minh, -(heapq.heappop(maxh)))
+    #     print(
+    
